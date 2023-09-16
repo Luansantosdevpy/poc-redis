@@ -1,7 +1,7 @@
 {
-  "name": "sales-api",
+  "name": "poc-redis",
   "version": "1.0.0",
-  "description": "Api de vendas",
+  "description": "Poc para testar redis",
   "main": "index.ts",
   "scripts": {
     "build": "tsc",

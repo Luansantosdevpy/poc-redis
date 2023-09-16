@@ -2,8 +2,8 @@
 version: '3.8'
 
 services:
-  sales_api:
-    container_name: sales_api
+  poc_redis:
+    container_name: poc_redis
     image: node:18.12.1-alpine
     restart: always
     volumes:
@@ -11,7 +11,7 @@ services:
     working_dir: /app
     command: sh -c 'yarn install && yarn build && yarn dev'
     ports:
-      - "4500:4500"
+      - "6600:6600"
     environment:
       APP_NAME: ${APP_NAME}
       APP_ENVIRONMENT: ${APP_ENVIRONMENT}
@@ -29,7 +29,7 @@ services:
       - sharedNetwork
 
   postgres:
-    container_name: sales_database
+    container_name: poc_redis_database
     image: postgres:13-alpine
     restart: always
     environment:
